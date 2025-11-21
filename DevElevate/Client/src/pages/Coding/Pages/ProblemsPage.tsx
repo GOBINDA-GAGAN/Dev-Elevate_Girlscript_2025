@@ -37,6 +37,7 @@ const CompilerPage = () => {
 
   const handleRun = async () => {
     const encodedCode = btoa(code);
+    console.log("Encoded Code:", encodedCode);
     const response = await axios.post("http://localhost:4000/api/v1/compiler", {
       source_code: encodedCode,
       language_id: selectedLanguage.id,

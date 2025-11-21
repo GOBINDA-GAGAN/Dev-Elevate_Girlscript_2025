@@ -4,7 +4,9 @@ import axios from "axios";
 const router = express.Router();
 
 router.post("/", async (req, res) => {
+  
   let { source_code, language_id, stdin, is_base64 } = req.body;
+  console.log(source_code,language_id, stdin, is_base64);
   if (is_base64) {
     source_code = Buffer.from(source_code, "base64").toString("utf-8");
   }
